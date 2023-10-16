@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { User } from '../../models';
 
 
 @Component({
@@ -12,14 +13,16 @@ import { MatDialogRef } from '@angular/material/dialog';
 export class UsersDialogComponent {
   userForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private matDialogRef: MatDialogRef<UsersDialogComponent>) {
+  constructor(private fb: FormBuilder, private matDialogRef: MatDialogRef<UsersDialogComponent>, @Inject(MAT_DIALOG_DATA)public user?: User,) {
    this.userForm = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(3)]],
-    lastName: ['',[Validators.required, Validators.minLength(3)]],
+    lastname: ['',[Validators.required, Validators.minLength(3)]],
     email: ['', [Validators.required, Validators.email]],
     
-
     });
+    if (this.user) {
+      this.userForm.patchValue(this.user);
+    }
   }
 
   onSubmit(): void{

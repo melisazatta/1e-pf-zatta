@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Crear usuario</h1>
+<h1 mat-dialog-title> {{ user ? "Editar usuario" : "Crear usuario" }} </h1>
 
 <div mat-dialog-content>
 
@@ -16,9 +16,9 @@
             <div class="col-6">
                 <mat-form-field class="w-100">
                     <mat-label>Apellido</mat-label>
-                    <input formControlName="lastName" matInput/>
+                    <input formControlName="lastname" matInput/>
                     <mat-error>
-                        {{ userForm.get("lastName")?.errors | formErrors}}
+                        {{ userForm.get("lastname")?.errors | formErrors}}
                     </mat-error>
                 </mat-form-field>
             </div>

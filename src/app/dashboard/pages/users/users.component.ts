@@ -41,11 +41,36 @@ export class UsersComponent {
         next: (v) => {
           console.log('Valor: ', v);
           if (!!v) {
-            this.userName = v;
+            this.users = [
+              ...this.users,
+              {
+              ...v, id: new Date().getTime(),
+              },
+            ];
           }
           
         }
       });
+    }
+
+    onEditUser(user: User): void{
+      this.matDialog.open(UsersDialogComponent, {
+        data: user,
+      }).afterClosed().subscribe({
+        next: (v) => {
+          if (!!v){
+        this.users = this.users.map((u) => u.id === user.id ? { ...u, ...v} : u
+        );
+        }
+        },
+      });
+    }
+
+    onDeleteUser(userId: number): void{
+      if (confirm('Esta seguro?')){
+          this.users = this.users.filter((u) => u.id !== userId); 
+      }
+   
     }
 
 }
