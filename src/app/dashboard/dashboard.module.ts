@@ -13,6 +13,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MatListModule } from '@angular/material/list';
 import { SharedModule } from '../shared/shared.module';
 import { AppRoutingModule } from '../app-routing.module';
+import { CoursesModule } from './pages/courses/courses.module';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { AppRoutingModule } from '../app-routing.module';
     MatToolbarModule,
     MatIconModule,
     UsersModule,
+    CoursesModule,
     MatListModule,
     SharedModule,
     AppRoutingModule,
