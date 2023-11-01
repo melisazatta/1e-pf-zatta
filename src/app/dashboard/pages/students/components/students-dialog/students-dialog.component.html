@@ -1,0 +1,44 @@
+<h1 mat-dialog-title> {{ student ? "Editar usuario" : "Crear usuario" }} </h1>
+
+<div mat-dialog-content>
+
+    <form [formGroup]="studentForm">
+        <div class="row">
+            <div class="col-6">
+                <mat-form-field class="w-100">
+                    <mat-label>Nombre</mat-label>
+                    <input formControlName="name" matInput/>
+                    <mat-error>
+                        {{ studentForm.get("name")?.errors | formErrors}}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-6">
+                <mat-form-field class="w-100">
+                    <mat-label>Apellido</mat-label>
+                    <input formControlName="lastname" matInput/>
+                    <mat-error>
+                        {{ studentForm.get("lastname")?.errors | formErrors}}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-12">
+                <mat-form-field class="w-100">
+                    <mat-label>Email</mat-label>
+                    <input formControlName="email" matInput/>
+                    <mat-error>
+                        {{ studentForm.get("email")?.errors | formErrors}}
+                    </mat-error>
+                </mat-form-field>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+<div mat-dialog-actions>
+
+    <button (click)="onSubmit()" mat-button>Guardar</button>
+    <button mat-dialog-close="" mat-button>Cancelar</button>
+
+</div>

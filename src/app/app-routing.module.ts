@@ -7,6 +7,8 @@ import { UsersComponent } from './dashboard/pages/users/users.component';
 import { UserDetailComponent } from './dashboard/pages/users/components/user-detail/user-detail.component';
 import { CoursesComponent } from './dashboard/pages/courses/courses.component';
 import { EnrollmentsComponent } from './dashboard/pages/enrollments/enrollments.component';
+import { StudentsComponent } from './dashboard/pages/students/students.component';
+import { StudentDetailComponent } from './dashboard/pages/students/components/student-detail/student-detail.component';
 
 const routes: Routes = [
   {
@@ -22,8 +24,16 @@ const routes: Routes = [
         component: UsersComponent,
       },
       {
+        path: 'students',
+        component: StudentsComponent,
+      },
+      {
         path: 'users/detail/:id',
         component: UserDetailComponent,
+      },
+      {
+        path: 'students/detail/:id',
+        component: StudentDetailComponent,
       },
       {
         path: 'courses',

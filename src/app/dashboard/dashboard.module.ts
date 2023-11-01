@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './dashboard.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatButtonModule } from '@angular/material/button';
-import { FormModule } from './pages/form/form.module';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
@@ -14,6 +13,7 @@ import { MatListModule } from '@angular/material/list';
 import { SharedModule } from '../shared/shared.module';
 import { AppRoutingModule } from '../app-routing.module';
 import { CoursesModule } from './pages/courses/courses.module';
+import { StudentsModule } from './pages/students/students.module';
 
 
 @NgModule({
@@ -26,10 +26,10 @@ import { CoursesModule } from './pages/courses/courses.module';
     CommonModule,
     MatSidenavModule, 
     MatButtonModule,
-    FormModule,
     MatToolbarModule,
     MatIconModule,
     UsersModule,
+    StudentsModule,
     CoursesModule,
     MatListModule,
     SharedModule,

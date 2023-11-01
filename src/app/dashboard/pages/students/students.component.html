@@ -1,0 +1,8 @@
+<h1 fontWeight="bolder" appHeadline>Alumnos</h1>
+
+<button (click)="openStudentsDialog()" mat-flat-button color="primary">
+   <mat-icon>add</mat-icon> Añadir usuario</button>
+
+   <app-students-table [dataSource]="students" (editStudent)="onEditStudent($event)" (deleteStudent)="onDeleteStudent($event)"></app-students-table>
+
+   <router-outlet></router-outlet>
