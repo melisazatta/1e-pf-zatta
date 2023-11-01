@@ -10,7 +10,7 @@ import { UsersService } from './users.service';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent {
-  userName= '';
+  // userName= '';
 
   users: User[] = [];
 

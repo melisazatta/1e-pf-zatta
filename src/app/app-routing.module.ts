@@ -22,6 +22,12 @@ const routes: Routes = [
       {
         path: 'users',
         component: UsersComponent,
+    //     children: [
+    //       {
+    //    path: 'detail/:id',
+    //    component: UserDetailComponent,
+    //  },
+    //    ]
       },
       {
         path: 'students',
@@ -55,7 +61,7 @@ const routes: Routes = [
   },
   {
       path: '**',
-      redirectTo: 'auth',
+      redirectTo: 'dashboard/home',
   },
 ];
 
