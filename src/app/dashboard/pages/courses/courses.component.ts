@@ -25,11 +25,27 @@ export class CoursesComponent {
           this.courses$ = this.coursesService.createCourse$({
             id: new Date().getTime(),
             name: result.name,
-            startDate: new Date(),
-            endDate: new Date(),
+            startDate: result.startDate,
+            endDate: result.endDate,
           });
         }
       },
     });
+  }
+
+  onEditCourse(courseId: number): void {
+    this.matDialog.open(CoursesDialogComponent, {
+      data: courseId,
+    }).afterClosed().subscribe({
+      next: (result) => {
+        if (!!result) {
+          this.courses$ = this.coursesService.editCourse$(courseId, result);
+        }
+      }
+    });
+  }
+
+  onDeleteCourse(courseId: number): void {
+    this.courses$ = this.coursesService.deleteCourse$(courseId);
   }
 }

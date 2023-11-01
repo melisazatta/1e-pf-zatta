@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Agregar curso</h1>
+<h1 mat-dialog-title>{{ isEditing ? "Editando curso" : "Agregar curso" }}</h1>
 <div mat-dialog-content>
     <form class="row">
         <div class="col-12">
@@ -10,18 +10,28 @@
         <div class="col-6">
             <mat-form-field class="w-100">
                 <mat-label>Fecha de inicio</mat-label>
-                <input matInput />
+
+                <input [formControl]="startDateControl" matInput [matDatepicker]="startDatepicker">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="startDatepicker"></mat-datepicker-toggle>
+                <mat-datepicker #startDatepicker></mat-datepicker>
+                <!-- <input [formControl]="startDateControl" matInput /> -->
             </mat-form-field>
         </div>
         <div class="col-6">
             <mat-form-field class="w-100">
                 <mat-label>Fecha de finalización</mat-label>
-                <input matInput />
+
+                <input [formControl]="endDateControl" matInput [matDatepicker]="endDatepicker">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="endDatepicker"></mat-datepicker-toggle>
+                <mat-datepicker #endDatepicker></mat-datepicker>
+                <!-- <input [formControl]="endDateControl" matInput /> -->
             </mat-form-field>
         </div>
     </form>
 </div>
 <div mat-dialog-actions>
-    <button mat-button mat-dialog-close>Cerrar</button>
     <button (click)="onSubmit()" mat-button>Guardar</button>
+    <button mat-button mat-dialog-close>Cancelar</button>    
 </div>

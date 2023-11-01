@@ -9,14 +9,14 @@ export class CoursesService {
         {
         id: 1,
         name: 'Angular',
-        startDate: new Date(),
-        endDate: new Date(),
+        startDate: '12/11/2022',
+        endDate: '01/04/2023',
     },
     {
         id: 2,
         name: 'React',
-        startDate: new Date(),
-        endDate: new Date(),
+        startDate: '01/04/2023',
+        endDate: '12/10/2023',
     }
     ];
 
@@ -30,7 +30,15 @@ export class CoursesService {
     }
 
     editCourse$(id: number, payload: Course): Observable<Course[]> {
-        this.courses.push(payload);
         return of(this.courses.map((c) => c.id === id ? { ...c, ...payload} : c));
+    }
+
+    deleteCourse$(id:number): Observable<Course[]> {
+        this.courses = this.courses.filter((c) => c.id !== id);
+        return of(this.courses);
+    }
+
+    getCourseById$(id: number): Observable<Course | undefined> {
+        return of(this.courses.find((c) => c.id === id));
     }
 }
