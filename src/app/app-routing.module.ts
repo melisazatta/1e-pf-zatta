@@ -9,55 +9,61 @@ import { CoursesComponent } from './dashboard/pages/courses/courses.component';
 import { EnrollmentsComponent } from './dashboard/pages/enrollments/enrollments.component';
 import { StudentsComponent } from './dashboard/pages/students/students.component';
 import { StudentDetailComponent } from './dashboard/pages/students/components/student-detail/student-detail.component';
+import { dashboardGuard } from './core/guards/dashboard.guard';
 
 const routes: Routes = [
   {
     path: 'dashboard',
-    component: DashboardComponent,
-    children: [
-      {
-        path: 'home',
-        component: HomeComponent,
-      },
-      {
-        path: 'users',
-        component: UsersComponent,
-    //     children: [
-    //       {
-    //    path: 'detail/:id',
-    //    component: UserDetailComponent,
-    //  },
-    //    ]
-      },
-      {
-        path: 'students',
-        component: StudentsComponent,
-      },
-      {
-        path: 'users/detail/:id',
-        component: UserDetailComponent,
-      },
-      {
-        path: 'students/detail/:id',
-        component: StudentDetailComponent,
-      },
-      {
-        path: 'courses',
-        component: CoursesComponent,
-      },
-      {
-        path: 'enrollments',
-        component: EnrollmentsComponent,
-      },
-      {
-        path: '**',
-        redirectTo: 'home',
-      }
-    ]
+    canActivate: [dashboardGuard],
+    
+    //LazyLoading
+    loadChildren: () => import('./dashboard/dashboard.module').then((m) => m.DashboardModule),
+    // component: DashboardComponent,
+    // children: [
+    //   {
+    //     path: 'home',
+    //     component: HomeComponent,
+    //   },
+    //   {
+    //     path: 'users',
+    //     component: UsersComponent,
+    // //     children: [
+    // //       {
+    // //    path: 'detail/:id',
+    // //    component: UserDetailComponent,
+    // //  },
+    // //    ]
+    //   },
+    //   {
+    //     path: 'students',
+    //     component: StudentsComponent,
+    //   },
+    //   {
+    //     path: 'users/detail/:id',
+    //     component: UserDetailComponent,
+    //   },
+    //   {
+    //     path: 'students/detail/:id',
+    //     component: StudentDetailComponent,
+    //   },
+    //   {
+    //     path: 'courses',
+    //     component: CoursesComponent,
+    //   },
+    //   {
+    //     path: 'enrollments',
+    //     component: EnrollmentsComponent,
+    //   },
+    //   {
+    //     path: '**',
+    //     redirectTo: 'home',
+    //   }
+    // ]
   },
   {
     path: 'auth',
-    component: AuthComponent,
+    loadChildren: () => import('./auth/auth.module').then((m) => m.AuthModule)
+    // component: AuthComponent,
   },
   {
       path: '**',

@@ -7,3 +7,7 @@
 <app-courses-table [dataSource]="(courses$ | async) || []"
 (deleteCourse)="onDeleteCourse($event)"
 (editCourse)="onEditCourse($event)"></app-courses-table>
+
+<router-outlet></router-outlet>
+
+

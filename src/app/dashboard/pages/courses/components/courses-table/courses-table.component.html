@@ -31,7 +31,7 @@
 
 
             <!-- [routerLink]="course.id" -->
-        <button  mat-icon-button color="accent">
+        <button [routerLink]="course.id"  mat-icon-button color="accent">
           <mat-icon>visibility</mat-icon></button>
 
         <button (click)="editCourse.emit(course.id)" mat-icon-button color="primary">

@@ -14,6 +14,7 @@ import { SharedModule } from '../shared/shared.module';
 import { AppRoutingModule } from '../app-routing.module';
 import { CoursesModule } from './pages/courses/courses.module';
 import { StudentsModule } from './pages/students/students.module';
+import { DashboardRoutingModule } from './dashboard-routing.module';
 
 
 @NgModule({
@@ -25,15 +26,16 @@ import { StudentsModule } from './pages/students/students.module';
   imports: [
     CommonModule,
     MatSidenavModule, 
-    MatButtonModule,
+    // MatButtonModule,
     MatToolbarModule,
-    MatIconModule,
-    UsersModule,
-    StudentsModule,
-    CoursesModule,
+    // MatIconModule,
+    // UsersModule,
+    // StudentsModule,
+    // CoursesModule,
     MatListModule,
     SharedModule,
-    AppRoutingModule,
+
+    DashboardRoutingModule,
     
     ],
   exports: [
