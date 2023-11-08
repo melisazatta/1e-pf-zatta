@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { Course } from './models';
 import { MatDialog } from '@angular/material/dialog';
 import { CoursesDialogComponent } from './components/courses-dialog/courses-dialog.component';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-courses',
@@ -45,7 +46,22 @@ export class CoursesComponent {
     });
   }
 
+  // onDeleteCourse(courseId: number): void {
+  //   this.courses$ = this.coursesService.deleteCourse$(courseId);
+  // }
   onDeleteCourse(courseId: number): void {
-    this.courses$ = this.coursesService.deleteCourse$(courseId);
+    Swal.fire({
+      title: 'Confirmación',
+      text: '¿Está seguro de que desea eliminar este curso?',
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonText: 'Sí',
+      cancelButtonText: 'No'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        this.courses$ = this.coursesService.deleteCourse$(courseId);
+        Swal.fire('Éxito', 'El curso ha sido eliminado', 'success');
+      }
+    });
   }
 }

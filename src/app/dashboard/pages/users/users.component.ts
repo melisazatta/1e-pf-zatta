@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { UsersDialogComponent } from './components/users-dialog/users-dialog.component';
 import { User } from './models';
 import { UsersService } from './users.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-users',
@@ -50,11 +51,26 @@ export class UsersComponent {
       });
     }
 
-    onDeleteUser(userId: number): void{
-      if (confirm('Esta seguro?')){
-          this.users = this.users.filter((u) => u.id !== userId); 
-      }
+    // onDeleteUser(userId: number): void{
+    //   if (confirm('Esta seguro?')){
+    //       this.users = this.users.filter((u) => u.id !== userId); 
+    //   }
    
+    // }
+    onDeleteUser(userId: number): void {
+      Swal.fire({
+        title: 'Confirmación',
+        text: '¿Está seguro de que desea eliminar este usuario?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Sí',
+        cancelButtonText: 'No'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.users = this.users.filter((u) => u.id !== userId);          
+          Swal.fire('Éxito', 'El usuario ha sido eliminado', 'success');
+        }
+      });
     }
     
 }

@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { StudentsDialogComponent } from './components/students-dialog/students-dialog.component';
 import { Student } from './models';
 import { StudentsService } from './students.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-students',
@@ -50,11 +51,27 @@ export class StudentsComponent {
       });
     }
 
-    onDeleteStudent(studentId: number): void{
-      if (confirm('Esta seguro?')){
-          this.students = this.students.filter((s) => s.id !== studentId); 
-      }
+    // onDeleteStudent(studentId: number): void{
+    //   if (confirm('Esta seguro?')){
+    //       this.students = this.students.filter((s) => s.id !== studentId); 
+    //   }
    
+    // }
+
+    onDeleteStudent(studentId: number): void {
+      Swal.fire({
+        title: 'Confirmación',
+        text: '¿Está seguro de que desea eliminar este estudiante?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Sí',
+        cancelButtonText: 'No'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          this.students = this.students.filter((s) => s.id !== studentId);
+          Swal.fire('Éxito', 'El estudiante ha sido eliminado', 'success');
+        }
+      });
     }
     
 }

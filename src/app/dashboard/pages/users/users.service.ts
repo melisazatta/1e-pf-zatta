@@ -10,14 +10,14 @@ export class UsersService {
 
   getUsers(): User[] {
     return [
-      // {
-      //   id: 1,
-      //   name: 'Admin',
-      //   lastname: 'Admin',
-      //   email: 'admin@mail.com',
-      //   token: 'jbvjebvkswevbe',
-      //   role: 'admin',
-      // },
+      {
+        id: 1,
+        name: 'Admin',
+        lastname: 'Admin',
+        email: 'admin@mail.com',
+        token: 'jbvjebvkswevbe',
+        role: 'admin',
+      },
       // {
       //   id: 2,
       //   name: 'User',

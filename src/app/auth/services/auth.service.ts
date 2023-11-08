@@ -6,6 +6,8 @@ import { environment } from 'src/environments/environment.local';
 import { LoginPayload } from '../models';
 import { Router } from '@angular/router';
 
+import Swal from 'sweetalert2';
+
 
 @Injectable({
   providedIn: 'root',
@@ -33,8 +35,11 @@ export class AuthService {
       .subscribe({
         next: (response) => {
           if (!response.length) {
-            alert('Usuario o contraseña invalidos');
-          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Error',
+              text: 'Usuario o contraseña inválidos',
+            });          } else {
             const authUser = response[0];
             this._authUser$.next(authUser);
 
@@ -43,8 +48,11 @@ export class AuthService {
           }
         },
         error: (err) => {
-          alert('Error de conexion');
-        },
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Error de conexión',
+          });        },
       });
 
 
