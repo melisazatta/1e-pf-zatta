@@ -1,22 +1,30 @@
+<div style="background-color: rgb(58, 55, 55);">
+   <p style="text-align: center;">
+      {{ name$ | async | uppercase  }}
+      <br>
+      {{ email$ | async }}
+   </p>
+</div>
+
 <mat-nav-list>
-    <mat-list-item routerLink="home">
+    <mat-list-item routerLink="home" routerLinkActive #homeLink="routerLinkActive" [activated]="homeLink.isActive">
        <a>Home</a>
     </mat-list-item>
-    <mat-list-item routerLink="users" [activated]="true">
+    <mat-list-item routerLink="users" routerLinkActive #usuariosLink="routerLinkActive" [activated]="usuariosLink.isActive">
         <a>Usuarios</a>
      </mat-list-item>
-     <mat-list-item routerLink="students">
+     <mat-list-item routerLink="students" routerLinkActive #alumnosLink="routerLinkActive" [activated]="alumnosLink.isActive">
       <a>Alumnos</a>
    </mat-list-item>
-     <mat-list-item routerLink="courses">
+     <mat-list-item routerLink="courses" routerLinkActive #cursosLink="routerLinkActive" [activated]="cursosLink.isActive">
         <a>Cursos</a>
      </mat-list-item>
-     <mat-list-item routerLink="enrollments">
+     <mat-list-item routerLink="enrollments" routerLinkActive #inscripcionesLink="routerLinkActive" [activated]="inscripcionesLink.isActive">
         <a>Inscripciones</a>
      </mat-list-item>
 
-     <mat-list-item (click)="logout()">
+     <!-- <mat-list-item (click)="logout()">
       <a>Cerrar Sesión</a>
-   </mat-list-item>
+   </mat-list-item> -->
   </mat-nav-list>
   

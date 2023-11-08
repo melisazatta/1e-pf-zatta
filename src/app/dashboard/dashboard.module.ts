@@ -29,9 +29,6 @@ import { DashboardRoutingModule } from './dashboard-routing.module';
     // MatButtonModule,
     MatToolbarModule,
     // MatIconModule,
-    // UsersModule,
-    // StudentsModule,
-    // CoursesModule,
     MatListModule,
     SharedModule,
 

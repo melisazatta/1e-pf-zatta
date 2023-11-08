@@ -13,13 +13,4 @@ export const dashboardGuard: CanActivateFn = (route, state) => {
   )
   );
   
-  // return authService.authUser$.pipe(
-  //   map((user) => {
-  //     return !!user ? true : router.createUrlTree(['/auth']);
-  //   })
-  // )
-
-  // const tokenValido = false;
-
-  // return tokenValido ? router.createUrlTree(['/auth']) : true;
 };

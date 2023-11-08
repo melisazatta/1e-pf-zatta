@@ -22,22 +22,22 @@ import { DashboardComponent } from "./dashboard.component";
                     },
                     {
                         path: 'users',
-                        loadChildren: () => import('./pages/users/users.module').then((m)=> m.UsersModule)
+                        loadChildren: () => import('./pages/users/users.module').then((m) => m.UsersModule)
                         // component: UsersComponent,
                     },
                     {
                         path: 'students',
-                        loadChildren: () => import('./pages/students/students.module').then((m)=> m.StudentsModule)
+                        loadChildren: () => import('./pages/students/students.module').then((m) => m.StudentsModule)
                         // component: StudentsComponent,
                     },
-                    {
-                        path: 'users/detail/:id',
-                        component: UserDetailComponent,
-                    },
-                    {
-                        path: 'students/detail/:id',
-                        component: StudentDetailComponent,
-                    },
+                    // {
+                    //     path: 'users/detail/:id',
+                    //     component: UserDetailComponent,
+                    // },
+                    // {
+                    //     path: 'students/detail/:id',
+                    //     component: StudentDetailComponent,
+                    // },
                     {
                         path: 'courses',
                         loadChildren: () => import('./pages/courses/courses.module').then((m) => m.CoursesModule)

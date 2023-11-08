@@ -4,20 +4,21 @@ import { StudentsComponent } from './students.component';
 import { StudentDetailComponent } from './components/student-detail/student-detail.component';
 
 
-const routes: Routes = [
-        {
-            path: '',
-            component: StudentsComponent
-        },
-        {
-            path: 'detail/:id',
-            component: StudentDetailComponent
-        }
-    
-];
-
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule]
+    imports: [
+        RouterModule.forChild([
+            {
+                path: '',
+                component: StudentsComponent
+            },
+            {
+                path: 'detail/:id',
+                component: StudentDetailComponent
+            }
+        ])
+    ],
+    exports: [RouterModule],
+    declarations: [],
+    providers: [],
 })
 export class StudentsRoutingModule {}
