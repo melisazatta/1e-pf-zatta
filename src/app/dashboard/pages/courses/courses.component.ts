@@ -38,20 +38,16 @@ export class CoursesComponent {
     this.matDialog.open(CoursesDialogComponent, {
       data: courseId,
     }).afterClosed().subscribe({
-      next: (result) => {
-        if (!!result) {
-          this.courses$ = this.coursesService.editCourse$(courseId, result);
+      next: (v) => {
+        if (!!v) {
+          this.courses$ = this.coursesService.editCourse$(courseId, v);
         }
       }
     });
   }
 
-  // onDeleteCourse(courseId: number): void {
-  //   this.courses$ = this.coursesService.deleteCourse$(courseId);
-  // }
   onDeleteCourse(courseId: number): void {
     Swal.fire({
-      title: 'Confirmación',
       text: '¿Está seguro de que desea eliminar este curso?',
       icon: 'warning',
       showCancelButton: true,
@@ -60,7 +56,7 @@ export class CoursesComponent {
     }).then((result) => {
       if (result.isConfirmed) {
         this.courses$ = this.coursesService.deleteCourse$(courseId);
-        Swal.fire('Éxito', 'El curso ha sido eliminado', 'success');
+        Swal.fire('', 'El curso ha sido eliminado', 'success');
       }
     });
   }

@@ -12,13 +12,16 @@
   ],
   "courses": [
     {
-      "name": "admin",
-      "lastName": "admin",
-      "email": "fake@mail.com",
-      "password": "123456",
-      "token": "jgfdsSfvcdskjdsfDSF435324ikdsad",
-      "role": "ADMIN",
+      "name": "React",
+      "startDate": "2023-11-01T03:00:00.000Z",
+      "endDate": "2023-12-15T03:00:00.000Z",
       "id": 1
+    },
+    {
+      "id": 1699505869864,
+      "name": "Angular",
+      "startDate": "2023-11-07T03:00:00.000Z",
+      "endDate": "2023-12-14T03:00:00.000Z"
     }
   ]
 }
