@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Student } from './models';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class StudentsService {
 
-  constructor() { }
+  constructor(private httpClient: HttpClient) { }
 
   getStudents(): Student[] {
     return [
