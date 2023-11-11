@@ -1,18 +1,18 @@
 <mat-toolbar class="flex justify-content-between" color="primary">
     <button (click)="toggleSidebar.emit()" mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon"
       >
-      <mat-icon>menu</mat-icon>
+      <mat-icon [ngStyle]="{'color': '#00bcd4'}">menu</mat-icon>
     </button>
     <div>
        <span>School App</span>
     <button onclick="location.href='https://github.com/melisazatta/1e-pf-zatta'" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>integration_instructions</mat-icon>
+      <mat-icon [ngStyle]="{'color': '#00bcd4'}">integration_instructions</mat-icon>
     </button> 
     </div>
    
     
     <button (click)="logout()">
-      <a><mat-icon>logout</mat-icon></a>
+      <a><mat-icon [ngStyle]="{'color': '#00bcd4'}">logout</mat-icon></a>
     </button>
   </mat-toolbar>
 

@@ -26,6 +26,15 @@ export class SidebarComponent {
   }
 
 
+  navigationItems = [
+    { label: 'Home', link: 'home' },
+    { label: 'Usuarios', link: 'users' },
+    { label: 'Alumnos', link: 'students' },
+    { label: 'Cursos', link: 'courses' },
+    { label: 'Inscripciones', link: 'enrollments' }
+  ];
+
+
   // logout(): void {
   //   this.authService.logout();
   // }

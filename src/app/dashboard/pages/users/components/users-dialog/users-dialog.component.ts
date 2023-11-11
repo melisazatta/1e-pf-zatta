@@ -16,8 +16,9 @@ export class UsersDialogComponent {
   constructor(private fb: FormBuilder, private matDialogRef: MatDialogRef<UsersDialogComponent>, @Inject(MAT_DIALOG_DATA)public user?: User,) {
    this.userForm = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(3)]],
-    lastname: ['',[Validators.required, Validators.minLength(3)]],
+    lastName: ['',[Validators.required, Validators.minLength(3)]],
     email: ['', [Validators.required, Validators.email]],
+    password: ['',[Validators.required, Validators.minLength(3)]],
     
     });
     if (this.user) {

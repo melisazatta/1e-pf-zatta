@@ -1,1 +1,7 @@
-<p>student-detail works!</p>
+<div *ngIf="student" class="student-detail">
+    <h2>{{ student | fullname }}</h2>
+    <p>{{ student.email }}</p>
+  </div>
+  <div *ngIf="!student">
+    <p>Loading...</p>
+  </div>

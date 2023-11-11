@@ -1,1 +1,8 @@
-<p>course-detail works!</p>
+<div *ngIf="course" class="course-detail">
+    <h2>{{ course.name }}</h2>
+    <p> Desde el {{ course.startDate | date: 'dd/MM/YYYY' }} al {{ course.endDate | date: 'dd/MM/YYYY' }}</p>
+    <p>{{ course.description }}</p>
+  </div>
+  <div *ngIf="!course">
+    <p>Loading...</p>
+  </div>

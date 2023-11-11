@@ -35,7 +35,7 @@ describe('AuthService', () => {
         const USER_MOCK: User = {
             id: 1,
             email: 'fake@mail.com',
-            lastname: 'fakeLastName',
+            lastName: 'fakeLastName',
             name: 'fakeName',
             role: 'ADMIN',
             token: '4b4jbgj4ekjn5hjn',

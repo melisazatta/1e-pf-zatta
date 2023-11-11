@@ -16,9 +16,9 @@
             <div class="col-6">
                 <mat-form-field class="w-100">
                     <mat-label>Apellido</mat-label>
-                    <input formControlName="lastname" matInput/>
+                    <input formControlName="lastName" matInput/>
                     <mat-error>
-                        {{ userForm.get("lastname")?.errors | formErrors}}
+                        {{ userForm.get("lastName")?.errors | formErrors}}
                     </mat-error>
                 </mat-form-field>
             </div>
@@ -30,6 +30,16 @@
                         {{ userForm.get("email")?.errors | formErrors}}
                     </mat-error>
                 </mat-form-field>
+                <div class="col-12">
+                    <mat-form-field class="w-100">
+                        <mat-label>Contraseña</mat-label>
+                        <input matInput type="password"
+                        formControlName="password"/>
+                        <mat-error>
+                            {{ userForm.get("password")?.errors | formErrors}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
             </div>
         </div>
     </form>

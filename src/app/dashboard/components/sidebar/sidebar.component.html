@@ -7,6 +7,14 @@
 </div>
 
 <mat-nav-list>
+   <ng-container *ngFor="let navItem of navigationItems; let i = index">
+     <mat-list-item [routerLink]="navItem.link" routerLinkActive #link="routerLinkActive" [activated]="link.isActive">
+       <a>{{ navItem.label }}</a>
+     </mat-list-item>
+   </ng-container>
+ </mat-nav-list>
+
+<!-- <mat-nav-list>
     <mat-list-item routerLink="home" routerLinkActive #homeLink="routerLinkActive" [activated]="homeLink.isActive">
        <a>Home</a>
     </mat-list-item>
@@ -23,8 +31,5 @@
         <a>Inscripciones</a>
      </mat-list-item>
 
-     <!-- <mat-list-item (click)="logout()">
-      <a>Cerrar Sesión</a>
-   </mat-list-item> -->
-  </mat-nav-list>
+  </mat-nav-list> -->
   

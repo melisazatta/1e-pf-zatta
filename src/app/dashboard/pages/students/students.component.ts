@@ -4,6 +4,7 @@ import { StudentsDialogComponent } from './components/students-dialog/students-d
 import { Student } from './models';
 import { StudentsService } from './students.service';
 import Swal from 'sweetalert2';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-students',
@@ -13,28 +14,22 @@ import Swal from 'sweetalert2';
 export class StudentsComponent {
   studentName= '';
 
-  students: Student[] = [];
+  students$: Observable <Student[]>;
 
   constructor(
     private matDialog: MatDialog, private studentsService: StudentsService
     ){
-      this.students = this.studentsService.getStudents();
+      this.students$ = this.studentsService.getStudents();
     }
 
-    openStudentsDialog(): void {
+    addStudent(): void {
       this.matDialog.open(StudentsDialogComponent).afterClosed().subscribe({
         next: (v) => {
-          console.log('Valor: ', v);
           if (!!v) {
-            this.students = [
-              ...this.students,
-              {
-              ...v, id: new Date().getTime(),
-              },
-            ];
-          }
+           this.students$ = this.studentsService.createStudent(v)
+           }
           
-        }
+         }
       });
     }
 
@@ -43,24 +38,15 @@ export class StudentsComponent {
         data: student,
       }).afterClosed().subscribe({
         next: (v) => {
-          if (!!v){
-        this.students = this.students.map((s) => s.id === student.id ? { ...s, ...v} : s
-        );
-        }
+           if (!!v){
+         this.students$ = this.studentsService.updateStudent(student.id, v)
+         }
         },
       });
     }
 
-    // onDeleteStudent(studentId: number): void{
-    //   if (confirm('Esta seguro?')){
-    //       this.students = this.students.filter((s) => s.id !== studentId); 
-    //   }
-   
-    // }
-
     onDeleteStudent(studentId: number): void {
       Swal.fire({
-        title: 'Confirmación',
         text: '¿Está seguro de que desea eliminar este estudiante?',
         icon: 'warning',
         showCancelButton: true,
@@ -68,8 +54,8 @@ export class StudentsComponent {
         cancelButtonText: 'No'
       }).then((result) => {
         if (result.isConfirmed) {
-          this.students = this.students.filter((s) => s.id !== studentId);
-          Swal.fire('Éxito', 'El estudiante ha sido eliminado', 'success');
+           this.students$ = this.studentsService.deleteStudent(studentId);
+           Swal.fire('', 'El estudiante ha sido eliminado', 'success');
         }
       });
     }

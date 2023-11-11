@@ -13,11 +13,13 @@ export class CoursesDialogComponent {
   nameControl = new FormControl('', [Validators.required, Validators.minLength(3)]);
   startDateControl = new FormControl('', Validators.required);
   endDateControl = new FormControl('', Validators.required);
+  descriptionControl = new FormControl('', Validators.required)
 
   courseForm = new FormGroup({
     name: this.nameControl,
     startDate: this.startDateControl,
     endDate: this.endDateControl,
+    description: this.descriptionControl,
   });
 
   constructor(private matDialogRef: MatDialogRef<CoursesDialogComponent>,

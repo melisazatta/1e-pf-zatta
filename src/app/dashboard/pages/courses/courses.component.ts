@@ -28,6 +28,7 @@ export class CoursesComponent {
             name: result.name,
             startDate: result.startDate,
             endDate: result.endDate,
+            description: result.description,
           });
         }
       },

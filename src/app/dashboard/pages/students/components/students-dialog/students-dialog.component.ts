@@ -16,7 +16,7 @@ export class StudentsDialogComponent {
   constructor(private fb: FormBuilder, private matDialogRef: MatDialogRef<StudentsDialogComponent>, @Inject(MAT_DIALOG_DATA)public student?: Student,) {
    this.studentForm = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(3)]],
-    lastname: ['',[Validators.required, Validators.minLength(3)]],
+    lastName: ['',[Validators.required, Validators.minLength(3)]],
     email: ['', [Validators.required, Validators.email]],
     
     });
