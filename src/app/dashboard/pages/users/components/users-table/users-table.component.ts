@@ -20,7 +20,7 @@ export class UsersTableComponent {
   editUser = new EventEmitter<User>();
 
 
-  displayedColumns= ['id', 'fullname', 'email', 'actions'];
+  displayedColumns= ['id', 'fullname', 'email', 'role', 'actions'];
 
   constructor(private router: Router) {}
 

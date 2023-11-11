@@ -1,6 +1,6 @@
 <h1 mat-dialog-title> {{ user ? "Editar usuario" : "Crear usuario" }} </h1>
 
-<div mat-dialog-content>
+<div mat-dialog-content style="padding-top: 0.5rem;">
 
     <form [formGroup]="userForm">
         <div class="row">
@@ -30,7 +30,8 @@
                         {{ userForm.get("email")?.errors | formErrors}}
                     </mat-error>
                 </mat-form-field>
-                <div class="col-12">
+            </div>    
+                <div class="col-6">
                     <mat-form-field class="w-100">
                         <mat-label>Contraseña</mat-label>
                         <input matInput type="password"
@@ -40,7 +41,17 @@
                         </mat-error>
                     </mat-form-field>
                 </div>
-            </div>
+                <div class="col-6">
+                    <mat-form-field class="w-100">
+                        <mat-label>Role</mat-label>
+                        <input formControlName="role" matInput/>
+                        <mat-error>
+                            {{ userForm.get("role")?.errors | formErrors}}
+                        </mat-error>
+                    </mat-form-field>
+                </div>
+                
+            
         </div>
     </form>
 
