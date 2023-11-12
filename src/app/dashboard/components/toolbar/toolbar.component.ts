@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/services/auth.service';
 
 @Component({
@@ -10,7 +11,11 @@ export class ToolbarComponent {
   @Output()
   toggleSidebar = new EventEmitter();
 
-  constructor(private authService: AuthService){}
+  constructor(private authService: AuthService, private router: Router){}
+
+  navigateToHome() {
+    this.router.navigate(['home']);
+  }
 
   logout(): void {
     this.authService.logout();

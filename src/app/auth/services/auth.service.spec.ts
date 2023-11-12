@@ -30,7 +30,7 @@ describe('AuthService', () => {
         expect(authService).toBeTruthy()
     })
 
-    it('Debe establecer un usuario autenticado al hace login()', () => {
+    it('Debe establecer un usuario autenticado al hacer login()', () => {
 
         const USER_MOCK: User = {
             id: 1,

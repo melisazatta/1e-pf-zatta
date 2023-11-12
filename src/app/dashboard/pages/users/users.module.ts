@@ -11,7 +11,7 @@ import { UsersRoutingModule } from './users-routing.module';
 
 @NgModule({
   declarations: [
-    UsersComponent, UsersDialogComponent, UsersTableComponent, UserDetailComponent
+    UsersComponent, UsersDialogComponent, UsersTableComponent, UserDetailComponent,
   ],
   imports: [
     CommonModule,

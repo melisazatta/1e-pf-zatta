@@ -3,9 +3,8 @@
       >
       <mat-icon [ngStyle]="{'color': '#00bcd4'}">menu</mat-icon>
     </button>
-    <div>
-       <span>School App</span>
-    <button onclick="location.href='https://github.com/melisazatta/1e-pf-zatta'" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <div (click)="navigateToHome()" class="school-app-link ">School App
+       <button onclick="location.href='https://github.com/melisazatta/1e-pf-zatta'" mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
       <mat-icon [ngStyle]="{'color': '#00bcd4'}">integration_instructions</mat-icon>
     </button> 
     </div>

@@ -7,6 +7,14 @@
       "password": "123456",
       "role": "ADMIN",
       "id": 1
+    },
+    {
+      "name": "Regina",
+      "lastName": "Falange",
+      "email": "gina@mail.com",
+      "password": "gina",
+      "role": "admin",
+      "id": 2
     }
   ],
   "students": [

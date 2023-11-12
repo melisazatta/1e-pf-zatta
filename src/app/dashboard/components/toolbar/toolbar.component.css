@@ -1,0 +1,9 @@
+.school-app-link {
+    cursor: pointer;
+    transition: color 0.3s ease; /* Add a smooth transition for color change */
+  
+    /* Hover effect */
+    &:hover {
+      color: rgb(51, 197, 255);
+    }
+  }
