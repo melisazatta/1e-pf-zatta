@@ -2,9 +2,9 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
-    background-image: url(./assets/6103951.jpg); 
+    /* background-image: url(./assets/6103951.jpg); 
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    height: 100vh;
+    height: 100vh; */
 }
