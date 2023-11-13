@@ -57,7 +57,8 @@ describe('UsersComponent', () => {
 
     tick();
 
-    expect(mockUsersService.createUser).toHaveBeenCalledWith(mockUserToAdd);
+    expect(mockUsersService.createUser).toHaveBeenCalledWith(jasmine.objectContaining({ token: jasmine.any(String) })
+    );
 }));
 
   it('should edit a user', fakeAsync(() => {

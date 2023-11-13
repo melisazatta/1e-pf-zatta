@@ -17,10 +17,11 @@ export class SidebarComponent {
     this.authUser$ = this.authService.authUser$
   }
 
-  get name$(): Observable<string | undefined> {
-    return this.authUser$.pipe(map((user) => user?.name));
-  }
-
+  get fullName$(): Observable<string> {
+    return this.authUser$.pipe(
+      map((user) => `${user?.name} ${user?.lastName}`)
+    );
+    }
   get email$(): Observable<string | undefined> {
     return this.authUser$.pipe(map((user) => user?.email));
   }

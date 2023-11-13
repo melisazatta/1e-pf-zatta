@@ -5,6 +5,7 @@ import { Course } from './models';
 import { MatDialog } from '@angular/material/dialog';
 import { CoursesDialogComponent } from './components/courses-dialog/courses-dialog.component';
 import Swal from 'sweetalert2';
+import { generarRandomId } from 'src/app/shared/helpers';
 
 @Component({
   selector: 'app-courses',
@@ -23,8 +24,10 @@ export class CoursesComponent {
     this.matDialog.open(CoursesDialogComponent).afterClosed().subscribe({
       next: (result) => {
         if (result) {
+          // const randomId = parseInt(generarStringRandom, 10); // Adjust the length as needed
+
           this.courses$ = this.coursesService.createCourse$({
-            id: new Date().getTime(),
+            id: generarRandomId(),
             name: result.name,
             startDate: result.startDate,
             endDate: result.endDate,

@@ -6,14 +6,16 @@
       "email": "fake@mail.com",
       "password": "123456",
       "role": "ADMIN",
+      "token": "dfgshshshhb",
       "id": 1
     },
     {
-      "name": "Regina",
-      "lastName": "Falange",
-      "email": "gina@mail.com",
-      "password": "gina",
+      "name": "Melisa",
+      "lastName": "Sol",
+      "email": "ms@mail.com",
+      "password": "1234",
       "role": "admin",
+      "token": "hRlkg9LuvDoheRuun60iKmUus9ukp5h4",
       "id": 2
     }
   ],

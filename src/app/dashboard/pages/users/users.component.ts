@@ -5,6 +5,7 @@ import { User } from './models';
 import { UsersService } from './users.service';
 import Swal from 'sweetalert2';
 import { Observable } from 'rxjs';
+import { generarStringRandom } from 'src/app/shared/helpers';
 
 @Component({
   selector: 'app-users',
@@ -26,8 +27,13 @@ export class UsersComponent {
       this.matDialog.open(UsersDialogComponent).afterClosed().subscribe({
         next: (v) => {
           if (!!v) {
-            this.users$ = this.usersService.createUser(v)
-            }     
+            const userWithToken = {
+              ...v,
+              token: generarStringRandom(32),
+            };
+    
+            this.users$ = this.usersService.createUser(userWithToken);
+          }
           },          
         });
     }     

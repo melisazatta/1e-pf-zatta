@@ -3,4 +3,5 @@ mat-list-item :hover{
 }
 a{
  color: rgb(188, 126, 247);
+ font-size: 1.2rem;
 }
