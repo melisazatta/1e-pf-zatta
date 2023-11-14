@@ -7,6 +7,8 @@ import { environment } from "src/environments/environment.local";
 
 import { MockProvider } from "ng-mocks"
 import { Router } from "@angular/router";
+import { appReducer } from "src/app/store";
+import { StoreModule } from "@ngrx/store";
 
 describe('AuthService', () => {
 
@@ -17,7 +19,9 @@ describe('AuthService', () => {
         TestBed.configureTestingModule({
             imports: [
                 HttpClientTestingModule,
-                RouterTestingModule],
+                RouterTestingModule, StoreModule.forRoot(appReducer, {}),
+
+            ],
                 providers: [MockProvider(Router)]
         });
 

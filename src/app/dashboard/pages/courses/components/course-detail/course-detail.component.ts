@@ -26,5 +26,8 @@ export class CourseDetailComponent implements OnInit{
       });
     });
   }
+  goBack(): void {
+    window.history.back();
+  }
 
 }

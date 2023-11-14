@@ -2,6 +2,9 @@
     <h2>{{ course.name }}</h2>
     <p> Desde el {{ course.startDate | date: 'dd/MM/YYYY' }} al {{ course.endDate | date: 'dd/MM/YYYY' }}</p>
     <p>{{ course.description }}</p>
+
+    <button style="margin-top: 2rem;" mat-flat-button color="primary" (click)="goBack()">Volver</button>
+
   </div>
   <div *ngIf="!course">
     <p>Loading...</p>

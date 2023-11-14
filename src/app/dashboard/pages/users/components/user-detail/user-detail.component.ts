@@ -24,6 +24,9 @@ export class UserDetailComponent implements OnInit {
       });
     });
   }
+  goBack(): void {
+    window.history.back();
+  }
 }
   // constructor(private activatedRoute: ActivatedRoute) {
   //   console.log(this.activatedRoute.snapshot.params['id']);

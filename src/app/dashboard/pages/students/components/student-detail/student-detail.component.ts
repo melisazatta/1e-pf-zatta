@@ -25,4 +25,7 @@ export class StudentDetailComponent implements OnInit {
       });
     });
   }
+  goBack(): void {
+    window.history.back();
+  }
 }

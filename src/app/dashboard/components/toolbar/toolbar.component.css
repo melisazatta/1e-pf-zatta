@@ -8,3 +8,6 @@
       color: rgb(51, 197, 255);
     }
   }
+  .logout{
+    cursor: pointer;
+  }
