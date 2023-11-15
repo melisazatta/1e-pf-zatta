@@ -31,7 +31,9 @@
               "src/styles.css"
             ],
             "scripts": [],
-            "allowedCommonJsDependencies": ["sweetalert2"]
+            "allowedCommonJsDependencies": [
+              "sweetalert2"
+            ]
           },
           "configurations": {
             "production": {
@@ -48,11 +50,11 @@
                 }
               ],
               "outputHashing": "all",
-              "fileReplacements": [ 
+              "fileReplacements": [
                 {
-                "replace": "src/environments/environment.local.ts",
-                "with": "src/environments/environment.prod.ts"
-                }   
+                  "replace": "src/environments/environment.local.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
               ]
             },
             "development": {
@@ -105,5 +107,10 @@
         }
       }
     }
+  },
+  "cli": {
+    "schematicCollections": [
+      "@ngrx/schematics"
+    ]
   }
 }

@@ -13,6 +13,9 @@ import { generarStringRandom } from 'src/app/shared/helpers';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent {
+  // dataSource(dataSource: any) {
+  //   throw new Error('Method not implemented.');
+  // }
   // userName= '';
 
   users$: Observable<User[]>;

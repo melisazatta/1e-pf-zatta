@@ -1,13 +1,9 @@
 import { NgModule } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { HomeComponent } from "./pages/home/home.component";
-import { UsersComponent } from "./pages/users/users.component";
-import { StudentsComponent } from "./pages/students/students.component";
-import { UserDetailComponent } from "./pages/users/components/user-detail/user-detail.component";
-import { StudentDetailComponent } from "./pages/students/components/student-detail/student-detail.component";
-import { CoursesComponent } from "./pages/courses/courses.component";
 import { EnrollmentsComponent } from "./pages/enrollments/enrollments.component";
 import { DashboardComponent } from "./dashboard.component";
+import { adminGuard } from "../core/guards/admin.guard";
 
 @NgModule({
     imports: [
@@ -22,30 +18,23 @@ import { DashboardComponent } from "./dashboard.component";
                     },
                     {
                         path: 'users',
+                        canActivate: [adminGuard],
                         loadChildren: () => import('./pages/users/users.module').then((m) => m.UsersModule)
                         // component: UsersComponent,
                     },
                     {
                         path: 'students',
                         loadChildren: () => import('./pages/students/students.module').then((m) => m.StudentsModule)
-                        // component: StudentsComponent,
+                 
                     },
-                    // {
-                    //     path: 'users/detail/:id',
-                    //     component: UserDetailComponent,
-                    // },
-                    // {
-                    //     path: 'students/detail/:id',
-                    //     component: StudentDetailComponent,
-                    // },
+              
                     {
                         path: 'courses',
                         loadChildren: () => import('./pages/courses/courses.module').then((m) => m.CoursesModule)
-                        // component: CoursesComponent,
                     },
                     {
                         path: 'enrollments',
-                        component: EnrollmentsComponent,
+                        loadChildren: () => import('./pages/enrollments/enrollments.module').then((m) => m.EnrollmentsModule)
                     },
                     {
                         path: '**',

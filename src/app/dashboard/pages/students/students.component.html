@@ -1,6 +1,6 @@
 <h1 fontWeight="bolder" appHeadline>Alumnos</h1>
 
-<button (click)="addStudent()" mat-flat-button color="primary">
+<button [disabled]="(userRole$ | async) != 'ADMIN'" (click)="addStudent()" mat-flat-button color="primary">
    <mat-icon>add</mat-icon> Añadir Alumno</button>
 
    <app-students-table [dataSource]="(students$ | async) || []" (editStudent)="onEditStudent($event)" (deleteStudent)="onDeleteStudent($event)"></app-students-table>

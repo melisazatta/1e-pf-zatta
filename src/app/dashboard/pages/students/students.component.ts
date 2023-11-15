@@ -4,7 +4,9 @@ import { StudentsDialogComponent } from './components/students-dialog/students-d
 import { Student } from './models';
 import { StudentsService } from './students.service';
 import Swal from 'sweetalert2';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
+import { Store } from '@ngrx/store';
+import { selectAuthUser } from 'src/app/store/auth/auth.selectors';
 
 @Component({
   selector: 'app-students',
@@ -16,9 +18,13 @@ export class StudentsComponent {
 
   students$: Observable <Student[]>;
 
+  userRole$: Observable<'ADMIN' | 'USER' | undefined>
+
   constructor(
-    private matDialog: MatDialog, private studentsService: StudentsService
+    private matDialog: MatDialog, private studentsService: StudentsService, private store: Store
     ){
+      this.userRole$ = this.store.select(selectAuthUser).pipe(map((u) => u?.role))
+      
       this.students$ = this.studentsService.getStudents();
     }
 

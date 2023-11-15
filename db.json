@@ -79,5 +79,22 @@
       "description": "Este curso de JavaScript (online) tiene como objetivo enseñar conceptos elementales y herramientas básicas de programación que permitan el desarrollo web a través de este lenguaje, con el fin de optimizar sitios web.",
       "id": 1699656841700
     }
+  ],
+  "enrollments": [
+    {
+      "id": 1,
+      "courseId": 168686868686,
+      "studentId": 7
+    },
+    {
+      "id": 2,
+      "courseId": 1699505869864,
+      "studentId": 5
+    },
+    {
+      "id": 3,
+      "courseId": 1699656841700,
+      "studentId": 3
+    }
   ]
 }

@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
 import { CoursesService } from './courses.service';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { Course } from './models';
 import { MatDialog } from '@angular/material/dialog';
 import { CoursesDialogComponent } from './components/courses-dialog/courses-dialog.component';
 import Swal from 'sweetalert2';
 import { generarRandomId } from 'src/app/shared/helpers';
+import { selectAuthUser } from 'src/app/store/auth/auth.selectors';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-courses',
@@ -15,7 +17,10 @@ import { generarRandomId } from 'src/app/shared/helpers';
 export class CoursesComponent {
   courses$: Observable<Course[]>;
 
-  constructor(private coursesService: CoursesService, private matDialog: MatDialog) {
+  userRole$: Observable<'ADMIN' | 'USER' | undefined>
+
+  constructor(private coursesService: CoursesService, private matDialog: MatDialog, private store: Store) {
+    this.userRole$ = this.store.select(selectAuthUser).pipe(map((u) => u?.role))
 
     this.courses$ = this.coursesService.getCourses$()
   }
