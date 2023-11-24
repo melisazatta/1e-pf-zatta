@@ -9,6 +9,11 @@ import { MockProvider } from "ng-mocks"
 import { Router } from "@angular/router";
 import { appReducer } from "src/app/store";
 import { StoreModule } from "@ngrx/store";
+import { selectAuthUser } from "src/app/store/auth/auth.selectors";
+import { State } from "src/app/store/auth/auth.reducer";
+
+import { provideMockStore } from '@ngrx/store/testing';
+
 
 describe('AuthService', () => {
 
@@ -22,7 +27,19 @@ describe('AuthService', () => {
                 RouterTestingModule, StoreModule.forRoot(appReducer, {}),
 
             ],
-                providers: [MockProvider(Router)]
+                providers: [MockProvider(Router),
+                // provideMockStore<State>({
+                //     initialState: {
+                //         authUser: null,
+                //     },
+                //     selectors: [
+                //         {
+                //             selector: selectAuthUser,
+                //             value: null,
+                //         }
+                //     ]
+                // })
+            ]
         });
 
         authService = TestBed.inject(AuthService);

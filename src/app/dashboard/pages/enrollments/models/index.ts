@@ -8,3 +8,8 @@ export interface Enrollment {
     student?: Student;
     course?: Course;
 }
+
+export interface CreateEnrollmentPayload {
+    courseId: number | null;
+    studentId: number | null;
+}

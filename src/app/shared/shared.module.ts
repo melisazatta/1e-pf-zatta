@@ -13,7 +13,7 @@ import { FormErrorsPipe } from './pipes/form-errors.pipe';
 import { HeadlineDirective } from './directives/headline.directive';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatOptionModule } from '@angular/material/core';
-
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -38,6 +38,7 @@ import { MatOptionModule } from '@angular/material/core';
     HeadlineDirective,
     MatDatepickerModule,
     MatOptionModule,
+    MatSelectModule,
   ]
 })
 export class SharedModule { }

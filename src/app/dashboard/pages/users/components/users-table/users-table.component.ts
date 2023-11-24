@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { User } from '../../models';
+import { User, UserRole } from '../../models';
 import { Router } from '@angular/router';
 import { Store } from '@ngrx/store';
 import { Observable, map } from 'rxjs';
@@ -25,7 +25,7 @@ export class UsersTableComponent {
 
   displayedColumns= ['id', 'fullname', 'email', 'role', 'actions'];
 
-  userRole$: Observable<'ADMIN' | 'USER' | undefined>
+  userRole$: Observable<UserRole | undefined>
 
   constructor(private router: Router, private store: Store) {
     this.userRole$ = this.store.select(selectAuthUser).pipe(map((u) => u?.role))

@@ -95,6 +95,16 @@
       "id": 3,
       "courseId": 1699656841700,
       "studentId": 3
+    },
+    {
+      "courseId": 1699505869864,
+      "studentId": 6,
+      "id": 4
+    },
+    {
+      "courseId": 168686868686,
+      "studentId": 4,
+      "id": 6
     }
   ]
 }
