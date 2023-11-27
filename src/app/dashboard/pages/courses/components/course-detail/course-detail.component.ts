@@ -24,6 +24,10 @@ export class CourseDetailComponent implements OnInit{
       this.coursesService.getCourseById$(courseId).subscribe((course) => {
         this.course = course;
       });
+///////
+      this.coursesService.getCourseByIdWithEnrolledStudents$(courseId).subscribe((course) => {
+        this.course = course;
+      });
     });
   }
   goBack(): void {

@@ -3,6 +3,16 @@
     <p> Desde el {{ course.startDate | date: 'dd/MM/YYYY' }} al {{ course.endDate | date: 'dd/MM/YYYY' }}</p>
     <p>{{ course.description }}</p>
 
+    <br>
+    <p>----------</p>
+
+    <h3>Alumnos Inscriptos:</h3>
+    <ul>
+      <li *ngFor="let student of course.enrolledStudents">
+        {{ student.name }} {{ student.lastName }} ({{ student.email }})
+      </li>
+    </ul>
+
     <button style="margin-top: 2rem;" mat-flat-button color="primary" (click)="goBack()">Volver</button>
 
   </div>

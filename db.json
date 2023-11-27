@@ -17,6 +17,23 @@
       "role": "USER",
       "token": "dhbdbdbdbdb",
       "id": 2
+    },
+    {
+      "name": "juan",
+      "lastName": "perez",
+      "email": "juan@mail.com",
+      "password": "1234",
+      "role": "ADMIN",
+      "token": "nUPtlvJdySkyVcBQMnavctU1qTHX9ptS",
+      "id": 3
+    },
+    {
+      "name": "pepa",
+      "lastName": "pig",
+      "email": "pp@hdhdh",
+      "password": "1234",
+      "role": "user",
+      "id": 4
     }
   ],
   "students": [

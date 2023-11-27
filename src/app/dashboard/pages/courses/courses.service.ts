@@ -1,8 +1,10 @@
 import { Injectable } from "@angular/core";
 import { Course } from "./models";
-import { Observable, concatMap, of } from "rxjs";
+import { Observable, concatMap, map, of } from "rxjs";
 import { HttpClient } from "@angular/common/http";
 import { environment } from 'src/environments/environment.local';
+import { Enrollment } from "../enrollments/models";
+import { Student } from "../students/models";
 
 @Injectable({ providedIn: 'root'})
 export class CoursesService {
@@ -58,4 +60,36 @@ export class CoursesService {
         return this.httpClient.get<Course>(`${environment.baseUrl}/courses/${courseId}`)
         // return of(this.courses.find((c) => c.id === id));
     }
+
+
+    ///
+
+    getCourseByIdWithEnrolledStudents$(courseId: number): Observable<Course | undefined> {
+        return this.httpClient.get<Course>(`${environment.baseUrl}/courses/${courseId}`).pipe(
+            concatMap((course) => {
+                return this.httpClient.get<Enrollment[]>(`${environment.baseUrl}/enrollments?courseId=${courseId}`).pipe(
+                    map((enrollments) => {
+                        const enrolledStudents: Student[] = [];
+                        
+                        // Iterar sobre las inscripciones y hacer llamadas adicionales para obtener la información de los estudiantes
+                        enrollments.forEach((enrollment) => {
+                            this.httpClient.get<Student>(`${environment.baseUrl}/students/${enrollment.studentId}`).subscribe(
+                                (student) => {
+                                    if (student) {
+                                        enrolledStudents.push(student);
+                                    }
+                                }
+                            );
+                        });
+
+                        // Combinar la información del curso con la lista de estudiantes inscritos
+                        const courseWithEnrolledStudents: Course = { ...course, enrolledStudents };
+                        return courseWithEnrolledStudents;
+                    })
+                );
+            })
+        );
+    }
+
+    
 }

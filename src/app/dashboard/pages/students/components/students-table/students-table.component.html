@@ -26,7 +26,7 @@
         <button (click)="goToDetail(student.id)" mat-icon-button color="accent">
           <mat-icon>visibility</mat-icon></button>
 
-        <button [disabled]="(userRole$ | async) != 'ADMIN'" (click)="editStudent.emit(student)" mat-icon-button color="primary">
+        <button (click)="editStudent.emit(student)" mat-icon-button color="primary">
             <mat-icon>edit</mat-icon></button>
 
         <button [disabled]="(userRole$ | async) != 'ADMIN'" (click)="deleteStudent.emit(student.id)" mat-icon-button color="warn">

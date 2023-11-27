@@ -22,6 +22,7 @@ constructor(private store: Store) {
 
 
 /////
+
 deleteEnrollment(id: number): void {
   Swal.fire({
     title: 'Esta seguro?',

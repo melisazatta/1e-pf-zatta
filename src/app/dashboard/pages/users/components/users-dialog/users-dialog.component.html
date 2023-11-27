@@ -41,7 +41,7 @@
                         </mat-error>
                     </mat-form-field>
                 </div>
-                <div class="col-6">
+                <!-- <div class="col-6">
                     <mat-form-field class="w-100">
                         <mat-label>Role</mat-label>
                         <input formControlName="role" matInput/>
@@ -49,8 +49,20 @@
                             {{ userForm.get("role")?.errors | formErrors}}
                         </mat-error>
                     </mat-form-field>
-                </div>
-                
+                </div> -->
+                <div class="col-6">
+                    <mat-form-field class="w-100">
+                      <mat-label>Role</mat-label>
+                      <mat-select formControlName="role" [required]="(userForm.get('role')?.hasError('required')?? false) && (userForm.get('role')?.touched ?? false)">
+                        <mat-option *ngFor="let role of roleOptions | async" [value]="role">
+                          {{ role }}
+                        </mat-option>
+                      </mat-select>
+                      <mat-error *ngIf="userForm.get('role')?.hasError('required') && userForm.get('role')?.touched">
+                        Debe seleccionar un role
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
             
         </div>
     </form>
