@@ -5,3 +5,10 @@ a{
  color: rgb(188, 126, 247);
  font-size: 1.2rem;
 }
+div{
+    margin: 1rem; padding: 0.5rem;
+    background-color: rgb(58, 55, 55);
+}
+p{
+    text-align: center;
+}

@@ -1,17 +1,20 @@
 <div *ngIf="course" class="course-detail">
-    <h2>{{ course.name }}</h2>
+    <h1>{{ course.name }}</h1>
     <p> Desde el {{ course.startDate | date: 'dd/MM/YYYY' }} al {{ course.endDate | date: 'dd/MM/YYYY' }}</p>
     <p>{{ course.description }}</p>
 
     <br>
     <p>----------</p>
 
-    <h3>Alumnos Inscriptos:</h3>
+    <h2>Alumnos Inscriptos:</h2>
     <ul>
       <li *ngFor="let student of course.enrolledStudents">
         {{ student.name }} {{ student.lastName }} ({{ student.email }})
       </li>
     </ul>
+    <div *ngIf="!course.enrolledStudents">
+      <p>Loading...</p>
+    </div>
 
     <button style="margin-top: 2rem;" mat-flat-button color="primary" (click)="goBack()">Volver</button>
 

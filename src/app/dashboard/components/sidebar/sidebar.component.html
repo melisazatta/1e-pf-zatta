@@ -1,5 +1,5 @@
-<div style="background-color: rgb(58, 55, 55);">
-   <p style="text-align: center;">
+<div>
+   <p>
       {{ fullName$ | async | uppercase  }}
       <br>
       {{ email$ | async }}
@@ -9,7 +9,8 @@
 <mat-nav-list>
    <ng-container *ngFor="let navItem of navigationItems; let i = index">
      <mat-list-item [routerLink]="navItem.link" routerLinkActive #link="routerLinkActive" [activated]="link.isActive">
-       <a>{{ navItem.label }}</a>
+      
+       <a><mat-icon *ngIf="navItem.icon">{{ navItem.icon }}</mat-icon> {{ navItem.label }}</a>
      </mat-list-item>
    </ng-container>
  </mat-nav-list>

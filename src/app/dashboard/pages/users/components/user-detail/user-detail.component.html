@@ -5,5 +5,7 @@
 
     <button style="margin-top: 2rem;" mat-flat-button color="primary" (click)="goBack()">Volver</button>
 
-
   </div>
+  <div *ngIf="!user">
+      <p>Loading...</p>
+    </div>

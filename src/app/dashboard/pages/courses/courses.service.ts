@@ -71,7 +71,7 @@ export class CoursesService {
                     map((enrollments) => {
                         const enrolledStudents: Student[] = [];
                         
-                        // Iterar sobre las inscripciones y hacer llamadas adicionales para obtener la información de los estudiantes
+                        // Itera sobre las inscripciones y hace llamadas adicionales para obtener la información de los estudiantes
                         enrollments.forEach((enrollment) => {
                             this.httpClient.get<Student>(`${environment.baseUrl}/students/${enrollment.studentId}`).subscribe(
                                 (student) => {
@@ -82,7 +82,7 @@ export class CoursesService {
                             );
                         });
 
-                        // Combinar la información del curso con la lista de estudiantes inscritos
+                        // Combina la información del curso con la lista de estudiantes inscriptos
                         const courseWithEnrolledStudents: Course = { ...course, enrolledStudents };
                         return courseWithEnrolledStudents;
                     })

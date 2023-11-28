@@ -28,11 +28,11 @@ export class SidebarComponent {
 
 
   navigationItems = [
-    { label: 'Home', link: 'home' },
-    { label: 'Usuarios', link: 'users' },
-    { label: 'Alumnos', link: 'students' },
-    { label: 'Cursos', link: 'courses' },
-    { label: 'Inscripciones', link: 'enrollments' }
+    { label: 'Home', link: 'home', icon: 'home' },
+    { label: 'Usuarios', link: 'users', icon: 'perm_identity' },
+    { label: 'Alumnos', link: 'students', icon: 'school' },
+    { label: 'Cursos', link: 'courses', icon: 'menu_book' },
+    { label: 'Inscripciones', link: 'enrollments', icon: 'library_add' }
   ];
 
 
