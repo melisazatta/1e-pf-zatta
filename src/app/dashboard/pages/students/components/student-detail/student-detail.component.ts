@@ -23,6 +23,11 @@ export class StudentDetailComponent implements OnInit {
       this.studentsService.getStudentById$(studentId).subscribe((student) => {
         this.student = student;
       });
+
+      //
+      this.studentsService.getStudentByIdWithCourse$(studentId).subscribe((student) => {
+        this.student = student;
+      });
     });
   }
   goBack(): void {

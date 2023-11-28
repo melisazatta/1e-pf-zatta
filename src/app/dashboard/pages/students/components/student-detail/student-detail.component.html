@@ -2,6 +2,17 @@
     <h2>{{ student | fullname }}</h2>
     <p>{{ student.email }}</p>
 
+    <br>
+    <p>----------</p>
+
+
+    <h3>Cursando:</h3>
+    <ul>
+      <li *ngFor="let course of student.enrolledCourses">
+        {{ course.name }}
+      </li>
+    </ul>
+
     <button style="margin-top: 2rem;" mat-flat-button color="primary" (click)="goBack()">Volver</button>
 
   </div>
