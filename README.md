@@ -60,9 +60,9 @@ Update course's details: Opens the same dialog to add a new course but preloaded
 
 Delete course (admin only): Deletes the course from the database. For security, it will shows an alert.
 
-View course's details: Redirects you to a page that displays the course's details and all the students enrolled in it. There is a button to enroll a student in the course, as well as two options to unenroll a specific student from the course and email the student.
+View course's details: Redirects you to a page that displays the course's details and all the students enrolled in it.
 
-Update course's details (admin only): Opens the same dialog to add a new course but preloaded with the course's details. Note that if the course has already started, the name and start date fields will be disabled.
+Update course's details (admin only): Opens the same dialog to add a new course but preloaded with the course's details. 
 
 Delete course (admin only): Deletes the course from the database. For security, it will ask first if you are sure.
 
