@@ -47,7 +47,13 @@ export class UsersComponent {
       }).afterClosed().subscribe({
         next: (v) => {
           if (!!v){
-        this.users$ = this.usersService.updateUser(user.id, v);
+            //toma los datos del usuario y el token
+            const updatedUser = {
+              ...user,
+              ...v,
+              token: user.token,
+            };
+        this.users$ = this.usersService.updateUser(user.id, updatedUser);
          }
         },
        });
