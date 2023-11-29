@@ -67,7 +67,7 @@ Update course's details (admin only): Opens the same dialog to add a new course 
 Delete course (admin only): Deletes the course from the database. For security, it will ask first if you are sure.
 
 ## Enrollments
-This page shows a table with all the enrollments' details. There is also a button to create an enrollment, which opens a dialog to choose a student and a course. In the 'Actions' column of the table, there is an icon to delete an enrollment. This will delete the enrollment from the database. For security, it will ask first if you are sure.
+This page shows a table with all the enrollments' details. There is also a button to create an enrollment, which opens a dialog to choose a student and a course. In the 'Actions' column of the table, there is a button to delete an enrollment. This will delete the enrollment from the database. For security, it will ask first if you are sure.
 
 ## Users (admin only)
 In this page there's a button for add a user that opens a dialog, in its the admin can choose a role (admin or user). Also shows a table with all the users and actions buttons to modify and delete thems, and other button to view all the user's details.
@@ -86,3 +86,31 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
+# Installation
+<li>1- Clone the API Repository:</li>
+
+git clone https://github.com/melisazatta/api-jsonserver
+
+## Dependencies:
+
+npm install
+This will install all the dependencies specified in the package.json file.
+
+## Run the API:
+
+npm start
+This command starts the Angular development server. You can access the application at http://localhost:3000/.
+
+<li>2- Clone the Project Repository:</li>
+
+git clone https://github.com/melisazatta/3pf-zatta
+
+## Dependencies:
+
+npm install
+This will install all the dependencies specified in the package.json file.
+
+## Start the Application:
+
+ng serve
+This command starts the Angular development server. You can access the application at http://localhost:4200/.
