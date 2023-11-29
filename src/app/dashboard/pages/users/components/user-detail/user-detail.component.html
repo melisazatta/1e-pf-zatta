@@ -6,6 +6,7 @@
     <button style="margin-top: 2rem;" mat-flat-button color="primary" (click)="goBack()">Volver</button>
 
   </div>
-  <div *ngIf="!user">
+  <div class="spinner-container" *ngIf="!user">
+    <mat-spinner></mat-spinner>
       <p>Loading...</p>
     </div>

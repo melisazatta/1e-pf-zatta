@@ -91,7 +91,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 git clone https://github.com/melisazatta/api-jsonserver
 
-## Dependencies:
+### Dependencies:
 
 npm install
 This will install all the dependencies specified in the package.json file.
@@ -105,7 +105,7 @@ This command starts the Angular development server. You can access the applicati
 
 git clone https://github.com/melisazatta/3pf-zatta
 
-## Dependencies:
+### Dependencies:
 
 npm install
 This will install all the dependencies specified in the package.json file.

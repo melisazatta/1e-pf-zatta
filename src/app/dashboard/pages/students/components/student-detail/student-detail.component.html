@@ -12,13 +12,15 @@
         {{ course.name }}
       </li>
     </ul>
-    <div *ngIf="!student.enrolledCourses">
+    <div class="spinner-container" *ngIf="!student.enrolledCourses">
+      <mat-spinner></mat-spinner>
       <p>Loading...</p>
     </div>
 
     <button style="margin-top: 2rem;" mat-flat-button color="primary" (click)="goBack()">Volver</button>
 
   </div>
-  <div *ngIf="!student">
+  <div class="spinner-container" *ngIf="!student">
+    <mat-spinner></mat-spinner>
     <p>Loading...</p>
   </div>

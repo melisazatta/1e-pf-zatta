@@ -12,13 +12,15 @@
         {{ student.name }} {{ student.lastName }} ({{ student.email }})
       </li>
     </ul>
-    <div *ngIf="!course.enrolledStudents">
+    <div class="spinner-container" *ngIf="!course.enrolledStudents">
+      <mat-spinner></mat-spinner>
       <p>Loading...</p>
     </div>
 
     <button style="margin-top: 2rem;" mat-flat-button color="primary" (click)="goBack()">Volver</button>
 
   </div>
-  <div *ngIf="!course">
+  <div class="spinner-container" *ngIf="!course">
+    <mat-spinner></mat-spinner>
     <p>Loading...</p>
   </div>
