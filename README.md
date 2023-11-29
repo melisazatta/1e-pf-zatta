@@ -6,22 +6,29 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
 ## Running unit tests
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+## Final proyect for Angular course at Coderhouse.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Administrative system for a school. It allows to log in as an admin or a user.
 
-## Further help
+## Admin:
+Create, modify, delete and view student and course details.
+Create or delete an enrollment.
+Create, modify, delete, and change roles of users.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## User:
+Create, modify, send emails, and view student details.
+View course details.
+Create or delete an enrollment.
+
+<a href="https://3pf-zatta-git-main-melisazattas-projects.vercel.app/">Link to the app</a>
+
+
+https://zatta-api-jsonserver.onrender.com/
+
+https://github.com/melisazatta/3pf-zatta
+
+https://github.com/melisazatta/api-jsonserver
