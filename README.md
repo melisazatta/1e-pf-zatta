@@ -2,27 +2,29 @@
 
 ## Final proyect for Angular course at Coderhouse.
 
-Administrative system for a school. It allows to log in as an admin or a user.
+Administrative system for a school. It allows to log in as admin or user.
 
 ## Admin:
-Create, modify, delete and view student and course details.
+Create, modify, delete and view student's and course's details.
 Create or delete an enrollment.
 Create, modify, delete, and change roles of users.
 
 ## User:
-Create, modify, send emails, and view student details.
-View course details.
+Create, modify, and view student's details.
+View course's details.
 Create or delete an enrollment.
 
 ## Credentials:
 
-<h2>Admin Role</h2>
-mail: admin@mail.com
-password: admin
+### Admin Role
+<li>mail: admin@mail.com</li>
+<li>password: admin</li>
 
-<h2>User Role</h2>
-mail: user@mail.com
-password: user
+### User Role
+<li>mail: user@mail.com</li>
+<li>password: user</li>
+
+## Links 
 
 <a href="https://3pf-zatta-git-main-melisazattas-projects.vercel.app/">Link to the app</a>
 
@@ -68,7 +70,7 @@ Delete course (admin only): Deletes the course from the database. For security, 
 This page shows a table with all the enrollments' details. There is also a button to create an enrollment, which opens a dialog to choose a student and a course. In the 'Actions' column of the table, there is an icon to delete an enrollment. This will delete the enrollment from the database. For security, it will ask first if you are sure.
 
 ## Users (admin only)
-In this page there's a button for add a user that opens a dialog, in its there the admin can choose a role (amin or user). Also shows a table with all the users and actions buttons to modify and delete thems, and other button to view all the user's details.
+In this page there's a button for add a user that opens a dialog, in its the admin can choose a role (admin or user). Also shows a table with all the users and actions buttons to modify and delete thems, and other button to view all the user's details.
 
 Update user's details: Opens the same dialog to add a new user but preloaded with the user's details.
 
