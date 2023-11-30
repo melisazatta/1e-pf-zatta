@@ -1,7 +1,7 @@
 <h1>Cursos</h1>
 
 <div class="d-flex justify-content-end mb-3">
-    <button [disabled]="(userRole$ | async) != 'ADMIN'" (click)="addCourse()" mat-flat-button color="primary">Agregar curso</button>
+    <button [disabled]="(userRole$ | async) != 'admin'" (click)="addCourse()" mat-flat-button color="primary">Agregar curso</button>
 </div>
 
 <app-courses-table [dataSource]="(courses$ | async) || []"

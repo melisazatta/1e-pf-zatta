@@ -17,7 +17,7 @@ import { Store } from '@ngrx/store';
 export class CoursesComponent {
   courses$: Observable<Course[]>;
 
-  userRole$: Observable<'ADMIN' | 'USER' | undefined>
+  userRole$: Observable<'admin' | 'user' | undefined>
 
   constructor(private coursesService: CoursesService, private matDialog: MatDialog, private store: Store) {
     this.userRole$ = this.store.select(selectAuthUser).pipe(map((u) => u?.role))

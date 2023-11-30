@@ -23,7 +23,7 @@ export class CoursesTableComponent {
 
   displayedColumns = ['id', 'name', 'startDate', 'endDate','actions']
 
-  userRole$: Observable<'ADMIN' | 'USER' | undefined>
+  userRole$: Observable<'admin' | 'user' | undefined>
 
   constructor(private router: Router, private store: Store) {
     this.userRole$ = this.store.select(selectAuthUser).pipe(map((u) => u?.role))

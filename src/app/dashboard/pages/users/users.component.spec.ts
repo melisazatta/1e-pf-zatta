@@ -47,7 +47,7 @@ describe('UsersComponent', () => {
   });
 
   it('should add a user', fakeAsync(() => {
-    const mockUserToAdd: User = {  id: 1, name: 'John Doe', lastName: 'lastname', password: 'pass', role: 'ADMIN', email: 'email', token: 'token' }; 
+    const mockUserToAdd: User = {  id: 1, name: 'John Doe', lastName: 'lastname', password: 'pass', role: 'admin', email: 'email', token: 'token' }; 
 
 
     mockMatDialog.open.and.returnValue({
@@ -64,17 +64,17 @@ describe('UsersComponent', () => {
 }));
 
   it('should edit a user', fakeAsync(() => {
-    const mockUser: User = { id: 1, name: 'John Doe', lastName: 'lastname', password: 'pass', role: 'ADMIN', email: 'email', token: 'token' };
+    const mockUser: User = { id: 1, name: 'John Doe', lastName: 'lastname', password: 'pass', role: 'admin', email: 'email', token: 'token' };
 
     mockMatDialog.open.and.returnValue({
-      afterClosed: () => of({ id: 1, name: 'John Doe', lastName: 'lastname', password: 'pass', role: 'ADMIN', email: 'email', token: 'token' }),
+      afterClosed: () => of({ id: 1, name: 'John Doe', lastName: 'lastname', password: 'pass', role: 'admin', email: 'email', token: 'token' }),
     } as any);
 
     component.onEditUser(mockUser);
 
     tick();
 
-    expect(mockUsersService.updateUser).toHaveBeenCalledWith(mockUser.id, {  id: 1, name: 'John Doe', lastName: 'lastname', password: 'pass', role: 'ADMIN', email: 'email', token: 'token'});
+    expect(mockUsersService.updateUser).toHaveBeenCalledWith(mockUser.id, {  id: 1, name: 'John Doe', lastName: 'lastname', password: 'pass', role: 'admin', email: 'email', token: 'token'});
   }));
 
 //   it('should delete a user', fakeAsync(() => {

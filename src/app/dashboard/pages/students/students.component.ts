@@ -18,7 +18,7 @@ export class StudentsComponent {
 
   students$: Observable <Student[]>;
 
-  userRole$: Observable<'ADMIN' | 'USER' | undefined>
+  userRole$: Observable<'admin' | 'user' | undefined>
 
   constructor(
     private matDialog: MatDialog, private studentsService: StudentsService, private store: Store

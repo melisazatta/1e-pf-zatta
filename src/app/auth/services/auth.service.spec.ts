@@ -58,7 +58,7 @@ describe('AuthService', () => {
             email: 'fake@mail.com',
             lastName: 'fakeLastName',
             name: 'fakeName',
-            role: 'ADMIN',
+            role: 'admin',
             token: '4b4jbgj4ekjn5hjn',
             password: '123456',
         };

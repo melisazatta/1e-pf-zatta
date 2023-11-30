@@ -29,7 +29,7 @@
         <button (click)="editStudent.emit(student)" mat-icon-button color="primary">
             <mat-icon>edit</mat-icon></button>
 
-        <button [disabled]="(userRole$ | async) != 'ADMIN'" (click)="deleteStudent.emit(student.id)" mat-icon-button color="warn">
+        <button [disabled]="(userRole$ | async) != 'admin'" (click)="deleteStudent.emit(student.id)" mat-icon-button color="warn">
         <mat-icon>delete</mat-icon></button> 
     </td>
     </ng-container>
