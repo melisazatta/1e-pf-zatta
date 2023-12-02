@@ -1,34 +1,3 @@
-// import { TestBed } from '@angular/core/testing';
-// import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
-// import { UsersService } from './users.service';
-// import { MockProvider } from 'ng-mocks';
-// import { HttpClient } from '@angular/common/http';
-
-// describe('UsersService', () => {
-//   let service: UsersService;
-//   let httpMock: HttpTestingController;
-
-//   beforeEach(() => {
-//     TestBed.configureTestingModule({
-//       imports: [HttpClientTestingModule],
-//       providers: [UsersService, MockProvider(HttpClient),
-//       ],
-//     });
-
-//     service = TestBed.inject(UsersService);
-//     httpMock = TestBed.inject(HttpTestingController);
-//   });
-
-//   afterEach(() => {
-//     httpMock.verify();
-//   });
-
-//   it('should be created', () => {
-//     expect(service).toBeTruthy();
-//   });
-// });
-
-
 import { TestBed, inject } from '@angular/core/testing';
 import { HttpClientTestingModule, HttpTestingController } from '@angular/common/http/testing';
 import { UsersService } from './users.service';

@@ -14,7 +14,10 @@ import { adminGuard } from "../core/guards/admin.guard";
                 children: [
                     {
                         path: 'home',
-                        component: HomeComponent,
+                        loadChildren: () =>
+                        import('./pages/home/home.module').then(
+                            (m) => m.HomeModule
+                        ),
                     },
                     {
                         path: 'users',
