@@ -1,0 +1,15 @@
+.p404{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+.btn{
+    font-size: 2em;
+    position: absolute;
+    background-color: rgb(107, 0, 128);
+    border-radius: 1rem;
+    justify-content: center;
+    display: flex;
+    
+}

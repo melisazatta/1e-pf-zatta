@@ -4,6 +4,7 @@ import { HomeComponent } from "./pages/home/home.component";
 import { EnrollmentsComponent } from "./pages/enrollments/enrollments.component";
 import { DashboardComponent } from "./dashboard.component";
 import { adminGuard } from "../core/guards/admin.guard";
+import { Page404Component } from "../page404/page404.component";
 
 @NgModule({
     imports: [
@@ -40,9 +41,13 @@ import { adminGuard } from "../core/guards/admin.guard";
                         loadChildren: () => import('./pages/enrollments/enrollments.module').then((m) => m.EnrollmentsModule)
                     },
                     {
-                        path: '**',
-                        redirectTo: 'home',
+                        path: '',
+                        redirectTo: 'home', pathMatch: 'full',
+                        
                     },
+                    {
+                      path: '**', 
+                      component: Page404Component},
                 ]
 
             }
