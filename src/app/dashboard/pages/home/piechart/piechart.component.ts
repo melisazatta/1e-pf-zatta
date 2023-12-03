@@ -129,6 +129,11 @@ export class PieChartComponent implements OnInit {
       legend: {
         display: true,
         position: 'top',
+        labels: {
+          font: {
+            size: 20,
+          },
+        },
       },
       datalabels: {
         formatter: (value: any, ctx: any) => {

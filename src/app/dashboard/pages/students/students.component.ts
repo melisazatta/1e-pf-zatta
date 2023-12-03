@@ -45,7 +45,9 @@ export class StudentsComponent {
       }).afterClosed().subscribe({
         next: (v) => {
            if (!!v){
-         this.students$ = this.studentsService.updateStudent(student.id, v)
+            this.studentsService.updateStudent(student.id, v).subscribe(() => {
+              this.students$ = this.studentsService.getStudents();
+            })
          }
         },
       });

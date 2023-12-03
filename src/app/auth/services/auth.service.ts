@@ -121,10 +121,3 @@ export class AuthService {
   }
 
 }
-
-// const user: User = {
-//     id: 5,
-//     email: 'mail@mail.com',
-//     lastname: 'Sanchez',
-//     name: 'Carlos',
-// };
