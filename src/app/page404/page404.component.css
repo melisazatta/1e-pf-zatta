@@ -7,9 +7,15 @@
 .btn{
     font-size: 2em;
     position: absolute;
+    color: aliceblue;
     background-color: rgb(107, 0, 128);
     border-radius: 1rem;
     justify-content: center;
     display: flex;
+    cursor: pointer;
+    transition: color 0.3s ease; /* Add a smooth transition for color change */
     
+    &:hover {
+        color: rgb(51, 197, 255);
+      }
 }

@@ -57,7 +57,7 @@ export class StudentsService {
                         );
                     });
 
-                    // Combina la información del curso con la lista de estudiantes inscritos
+                    // Combina la información del curso con la lista de estudiantes inscriptos
                     const studentWithHisCourse: Student = { ...student, enrolledCourses };
                     return studentWithHisCourse;
                 })

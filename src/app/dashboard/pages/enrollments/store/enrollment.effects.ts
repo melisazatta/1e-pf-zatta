@@ -19,7 +19,6 @@ export class EnrollmentEffects {
       //Filtra acciones "de tipo" ()
       ofType(EnrollmentActions.loadEnrollments),
       concatMap(() =>
-        /** An EMPTY observable only emits completion. Replace with your own observable API request */
         this.getEnrollments().pipe(
           map(data => EnrollmentActions.loadEnrollmentsSuccess({ data })),
           catchError((error) => of(EnrollmentActions.loadEnrollmentsFailure({ error }))))
@@ -56,20 +55,6 @@ export class EnrollmentEffects {
     )
   );
 
-  // deleteEnrollment$ = createEffect(() =>
-  //    this.actions$.pipe(
-      
-  //     //Filtra acciones "de tipo" ()
-  //     ofType(EnrollmentActions.deleteEnrollment),
-  //     concatMap(({id}) =>
-
-  //       this.deleteEnrollment(id).pipe(
-  //         map(() => EnrollmentActions.deleteEnrollmentSuccess({id})),
-  //         catchError((error) => of(EnrollmentActions.deleteEnrollmentFailure({ error }))
-  //         ))
-  //       )
-  //   )
-  // );
   deleteEnrollment$ = createEffect(() => this.actions$.pipe(
     ofType(EnrollmentActions.deleteEnrollment),
 
@@ -85,9 +70,6 @@ export class EnrollmentEffects {
 
   constructor(private actions$: Actions, private httpClient: HttpClient) {}
 
-  // deleteEnrollment(id: number): Observable <Enrollment> {
-  //   return this.httpClient.delete<Enrollment>(`${environment.baseUrl}/enrollments/${id}`)
-  // }
 
   createEnrollment(payload: CreateEnrollmentPayload): Observable <Enrollment> {
     return this.httpClient.post<Enrollment>(`${environment.baseUrl}/enrollments`, payload)

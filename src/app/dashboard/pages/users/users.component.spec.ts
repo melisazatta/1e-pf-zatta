@@ -77,6 +77,9 @@ describe('UsersComponent', () => {
     expect(mockUsersService.updateUser).toHaveBeenCalledWith(mockUser.id, {  id: 1, name: 'John Doe', lastName: 'lastname', password: 'pass', role: 'admin', email: 'email', token: 'token'});
   }));
 
+
+
+  
 //   it('should delete a user', fakeAsync(() => {
 //     const mockUserId = 1;
 

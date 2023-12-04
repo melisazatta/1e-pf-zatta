@@ -35,9 +35,4 @@ export class SidebarComponent {
     { label: 'Inscripciones', link: 'enrollments', icon: 'library_add' }
   ];
 
-
-  // logout(): void {
-  //   this.authService.logout();
-  // }
-
 }

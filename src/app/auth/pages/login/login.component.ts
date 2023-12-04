@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-// import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -33,9 +32,5 @@ export class LoginComponent {
       //   }
       // })
     }
-  
 }
-  
-  //     this.authService.login(this.loginForm.getRawValue());
-  //   }
    }

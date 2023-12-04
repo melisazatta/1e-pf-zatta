@@ -59,28 +59,6 @@ export const reducer = createReducer(
 
 
   //Delete
-
-  // on(EnrollmentActions.deleteEnrollment, ( state) => {
-  //   return {
-  //     ...state,
-  //   }
-  // }),
-
-  //DeleteEnrollmentDialogOptionsSuccess
-  // on(EnrollmentActions.deleteEnrollmentSuccess, (state, action) => {
-  //   const updatedEnrollments = state.enrollments.filter(enrollment => enrollment.id !== action.id);
-
-  // return {
-  //   ...state,
-  //   enrollments: updatedEnrollments,
-  // };
-  // }),
-
-
-  // on(EnrollmentActions.deleteEnrollmentFailure, (state, action) => ({
-  //   ...state, 
-  //   error: action.error,
-  // }))
   on(EnrollmentActions.deleteEnrollment, (state) => (
     {
       ...state,

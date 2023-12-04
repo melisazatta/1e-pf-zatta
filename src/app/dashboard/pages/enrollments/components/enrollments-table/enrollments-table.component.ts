@@ -47,18 +47,3 @@ deleteEnrollment(id: number): void {
 }
 }
 
-// onDeleteCourse(courseId: number): void {
-//   Swal.fire({
-//     text: '¿Está seguro de que desea eliminar este curso?',
-//     icon: 'warning',
-//     showCancelButton: true,
-//     confirmButtonText: 'Sí',
-//     cancelButtonText: 'No'
-//   }).then((result) => {
-//     if (result.isConfirmed) {
-//       this.courses$ = this.coursesService.deleteCourse$(courseId);
-//       Swal.fire('', 'El curso ha sido eliminado', 'success');
-//     }
-//   });
-// }
-

@@ -94,6 +94,17 @@ export class AuthService {
       );
   }
 
+  logout(): void {
+    // this._authUser$.next(null);
+    this.store.dispatch(AuthActions.resetState())
+    localStorage.removeItem('token');
+    this.router.navigate(['/auth/login']);
+  }
+
+}
+
+
+
   /////////////////////////
   // register(payload: RegisterPayload): Observable<boolean> {
   //   return this.httpClient.post<User>(
@@ -112,12 +123,3 @@ export class AuthService {
   //   );
   // }
   ////////////////////////
-
-  logout(): void {
-    // this._authUser$.next(null);
-    this.store.dispatch(AuthActions.resetState())
-    localStorage.removeItem('token');
-    this.router.navigate(['/auth/login']);
-  }
-
-}
