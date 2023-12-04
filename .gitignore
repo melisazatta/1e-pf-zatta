@@ -42,3 +42,5 @@ testem.log
 Thumbs.db
 
 environments/environment.prod.ts
+
+src/app/dashboard/pages/courses/store/
