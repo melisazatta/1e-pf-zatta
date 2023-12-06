@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { Observable, map } from 'rxjs';
 import { selectAuthUser } from 'src/app/store/auth/auth.selectors';
 import { Store } from '@ngrx/store';
+import { selectStudents } from '../../store/students.selectors';
 
 @Component({
   selector: 'app-students-table',
@@ -27,8 +28,13 @@ export class StudentsTableComponent {
 
   userRole$: Observable<'admin' | 'user' | undefined>
 
+  students$: Observable<Student[]>
+
   constructor(private router: Router, private store: Store) {
     this.userRole$ = this.store.select(selectAuthUser).pipe(map((u) => u?.role))
+
+    this.students$ = this.store.select(selectStudents)
+
   }
 
   goToDetail(studentId: number): void {

@@ -7,6 +7,10 @@ import { UsersTableComponent } from './components/users-table/users-table.compon
 import { UserDetailComponent } from './components/user-detail/user-detail.component';
 import { RouterModule } from '@angular/router';
 import { UsersRoutingModule } from './users-routing.module';
+import { userFeature } from './store/users.reducer';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { UserEffects } from './store/users.effects';
 
 
 @NgModule({
@@ -17,6 +21,9 @@ import { UsersRoutingModule } from './users-routing.module';
     CommonModule,
     SharedModule,
     UsersRoutingModule,
+     //
+     StoreModule.forFeature(userFeature),
+     EffectsModule.forFeature([UserEffects])
   ],
   exports: [
     UsersComponent

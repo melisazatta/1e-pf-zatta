@@ -6,6 +6,8 @@ import { UsersService } from './users.service';
 import Swal from 'sweetalert2';
 import { Observable } from 'rxjs';
 import { generarStringRandom } from 'src/app/shared/helpers';
+import { UserActions } from './store/users.actions';
+import { Store } from '@ngrx/store';
 
 @Component({
   selector: 'app-users',
@@ -21,11 +23,15 @@ export class UsersComponent {
   users$: Observable<User[]>;
 
   constructor(
-    private matDialog: MatDialog, private usersService: UsersService
+    private matDialog: MatDialog, private usersService: UsersService, private store: Store
     ){
       this.users$ = this.usersService.getUsers();
+
+      this.store.dispatch(UserActions.loadUsers())
     }
 
+    //         this.users$ = this.usersService.createUser(userWithToken);
+   
     addUser(): void {
       this.matDialog.open(UsersDialogComponent).afterClosed().subscribe({
         next: (v) => {
@@ -35,11 +41,12 @@ export class UsersComponent {
               token: generarStringRandom(32),
             };
     
-            this.users$ = this.usersService.createUser(userWithToken);
+            // Dispatch the addUserSuccess action
+            this.store.dispatch(UserActions.createUser({ user: userWithToken }));
           }
-          },          
-        });
-    }     
+        },
+      });
+    }
 
     onEditUser(user: User): void{
       this.matDialog.open(UsersDialogComponent, {
@@ -53,7 +60,8 @@ export class UsersComponent {
               ...v,
               token: user.token,
             };
-        this.users$ = this.usersService.updateUser(user.id, updatedUser);
+        // this.users$ = this.usersService.updateUser(user.id, updatedUser);
+        this.store.dispatch(UserActions.editUser({ id: user.id, user: updatedUser }));
          }
         },
        });
@@ -67,7 +75,8 @@ export class UsersComponent {
         cancelButtonText: 'No'
       }).then((result) => {
         if (result.isConfirmed) {
-          this.users$ = this.usersService.deleteUser(userId);          
+          // this.users$ = this.usersService.deleteUser(userId);  
+          this.store.dispatch(UserActions.deleteUser({ userId }));        
           Swal.fire('', 'El usuario ha sido eliminado', 'success');
         }
       });

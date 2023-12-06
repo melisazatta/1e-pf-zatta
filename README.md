@@ -10,8 +10,8 @@ Create or delete an enrollment.
 Create, modify, delete, and change roles of users.
 
 ## User:
-Create, modify, and view student's details.
-View course's details.
+Create and view student's details.
+Create and view course's details.
 Create or delete an enrollment.
 
 ## Credentials:
@@ -63,15 +63,9 @@ Delete student (admin only): Deletes the student from the database. For security
 ## Courses
 This page shows a button for add a course that opens a dialog. Also shows a table with all the courses and actions buttons to modify and delete thems, and other button to view all the courses's details and the students enrolled in.
 
-Update course's details: Opens the same dialog to add a new course but preloaded with the course's details.
+Update course's details (admin only): Opens the same dialog to add a new course but preloaded with the course's details.
 
 Delete course (admin only): Deletes the course from the database. For security, it will shows an alert.
-
-View course's details: Redirects you to a page that displays the course's details and all the students enrolled in it.
-
-Update course's details (admin only): Opens the same dialog to add a new course but preloaded with the course's details. 
-
-Delete course (admin only): Deletes the course from the database. For security, it will ask first if you are sure.
 
 ## Enrollments
 This page shows a table with all the enrollments's details. There is also a button to create an enrollment, which opens a dialog to choose a student and a course. In the 'Actions' column of the table, there is a button to delete an enrollment. This will delete the enrollment from the database. For security, it will ask first if you are sure.

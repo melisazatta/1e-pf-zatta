@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Enrollment } from '../../models';
 import { Store } from '@ngrx/store';
-import { selectEnrollments } from '../../store/enrollment.selectors';
+import { selectEnrollments, selectEnrollmentsIsLoading } from '../../store/enrollment.selectors';
 import Swal from 'sweetalert2';
 import { EnrollmentActions } from '../../store/enrollment.actions';
 
@@ -15,9 +15,13 @@ export class EnrollmentsTableComponent {
   displayedColumns= ['id', 'course', 'student', 'actions'];
 
 enrollments$ : Observable<Enrollment[]>;
+isLoading$ : Observable<boolean>;
 
 constructor(private store: Store) {
   this.enrollments$ = this.store.select(selectEnrollments);
+
+  this.isLoading$ = this.store.select(selectEnrollmentsIsLoading)
+
 }
 
 

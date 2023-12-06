@@ -1,4 +1,8 @@
-<table mat-table [dataSource]="(enrollments$ | async) || []" class="mat-elevation-z8">
+<mat-spinner *ngIf="isLoading$ | async; else isNotLoading"></mat-spinner>
+
+<ng-template #isNotLoading>
+
+  <table mat-table [dataSource]="(enrollments$ | async) || []" class="mat-elevation-z8">
   
     <!-- Id Column -->
     <ng-container matColumnDef="id">
@@ -38,3 +42,5 @@
     <mat-spinner></mat-spinner>
     <p>Loading...</p>
   </div>
+
+</ng-template>

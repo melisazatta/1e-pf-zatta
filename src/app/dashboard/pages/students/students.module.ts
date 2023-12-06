@@ -7,6 +7,10 @@ import { StudentDetailComponent } from './components/student-detail/student-deta
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RouterModule } from '@angular/router';
 import { StudentsRoutingModule } from './students-routing.module';
+import { StudentEffects } from './store/students.effects';
+import { studentFeature } from './store/students.reducer';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 
 
@@ -21,6 +25,9 @@ import { StudentsRoutingModule } from './students-routing.module';
     CommonModule,
     SharedModule,
     StudentsRoutingModule,
+     //
+     StoreModule.forFeature(studentFeature),
+     EffectsModule.forFeature([StudentEffects])
   ],
   exports: [
     StudentsComponent
