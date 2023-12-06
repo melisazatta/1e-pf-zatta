@@ -56,7 +56,7 @@ Delete users: Deletes the user from the database. For security, it will shows an
 ## Students
 In this page there's a button for add a student that opens a dialog. Also shows a table with all the students and actions buttons to modify and delete thems, and other button to view all the student's personal details and the courses they are enrolled in.
 
-Update student's details: Opens the same dialog to add a new student but preloaded with the student's details.
+Update student's details (admin only): Opens the same dialog to add a new student but preloaded with the student's details.
 
 Delete student (admin only): Deletes the student from the database. For security, it will shows an alert.
 
