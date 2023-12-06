@@ -26,12 +26,12 @@ Create or delete an enrollment.
 
 ## Links 
 
-<a href="https://3pf-zatta-git-main-melisazattas-projects.vercel.app/">Link to the app</a>
+<a href="https://pf-zatta.vercel.app/">Link to the app</a>
 
 <a href="https://zatta-api-jsonserver.onrender.com/">Link to the API</a>
 
 
-<a href="https://github.com/melisazatta/3pf-zatta">Link to Frontend code</a>
+<a href="https://github.com/melisazatta/pf-zatta">Link to Frontend code</a>
 
 <a href="https://github.com/melisazatta/api-jsonserver">Link to Backend code</a>
 
@@ -101,7 +101,7 @@ This command starts the Angular development server. You can access the applicati
 
 <li>2- Clone the Project Repository:</li>
 
-git clone https://github.com/melisazatta/3pf-zatta
+git clone https://github.com/melisazatta/pf-zatta
 
 ### Dependencies:
 
