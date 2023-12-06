@@ -14,7 +14,7 @@ export class ToolbarComponent {
   constructor(private authService: AuthService, private router: Router){}
 
   navigateToHome() {
-    this.router.navigate(['home']);
+    this.router.navigate(['dashboard','home']);
   }
 
   logout(): void {
